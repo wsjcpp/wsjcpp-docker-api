@@ -1,6 +1,6 @@
 # wsjcpp-docker-api
 
-[![Build Status](https://api.travis-ci.org/wsjcpp/wsjcpp-docker-api.svg?branch=master)](https://travis-ci.org/wsjcpp/wsjcpp-docker-api) [![Github Stars](https://img.shields.io/github/stars/wsjcpp/wsjcpp-docker-api.svg?label=github%20%E2%98%85)](https://github.com/wsjcpp/wsjcpp-docker-api/stargazers) [![Github Stars](https://img.shields.io/github/contributors/wsjcpp/wsjcpp-docker-api.svg)](https://github.com/wsjcpp/wsjcpp-docker-api/) [![Github Forks](https://img.shields.io/github/forks/wsjcpp/wsjcpp-docker-api.svg?label=github%20forks)](https://github.com/wsjcpp/wsjcpp-docker-api/network/members)
+[![Build Status](https://api.travis-ci.com/wsjcpp/wsjcpp-docker-api.svg?branch=master)](https://travis-ci.com/wsjcpp/wsjcpp-docker-api) [![Github Stars](https://img.shields.io/github/stars/wsjcpp/wsjcpp-docker-api.svg?label=github%20%E2%98%85)](https://github.com/wsjcpp/wsjcpp-docker-api/stargazers) [![Github Stars](https://img.shields.io/github/contributors/wsjcpp/wsjcpp-docker-api.svg)](https://github.com/wsjcpp/wsjcpp-docker-api/) [![Github Forks](https://img.shields.io/github/forks/wsjcpp/wsjcpp-docker-api.svg?label=github%20forks)](https://github.com/wsjcpp/wsjcpp-docker-api/network/members)
 
 C++ implementation for docker-api (used curl)
 
