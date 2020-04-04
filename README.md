@@ -1,4 +1,6 @@
-# wsjcpp-docker-api-wrapper
+# wsjcpp-docker-api
+
+[![Build Status](https://api.travis-ci.org/wsjcpp/wsjcpp-docker-api.svg?branch=master)](https://travis-ci.org/wsjcpp/wsjcpp-docker-api) [![Github Stars](https://img.shields.io/github/stars/wsjcpp/wsjcpp-docker-api.svg?label=github%20%E2%98%85)](https://github.com/wsjcpp/wsjcpp-docker-api/stargazers) [![Github Stars](https://img.shields.io/github/contributors/wsjcpp/wsjcpp-docker-api.svg)](https://github.com/wsjcpp/wsjcpp-docker-api/) [![Github Forks](https://img.shields.io/github/forks/wsjcpp/wsjcpp-docker-api.svg?label=github%20forks)](https://github.com/wsjcpp/wsjcpp-docker-api/network/members)
 
 C++ implementation for docker-api (used curl)
 
@@ -31,7 +33,7 @@ or include files:
 // get default unix socket path (for linux and for mac)
 std::string sUnixSocketPath = dockerApi.getDefaultUnixSocketPath();
 if (!dockerApi.doConnectUnixSocketPath(sUnixSocketPath) ) {
-    WSJCppLog::err(TAG, "Could not connect to '" + sUnixSocketPath + "'");
+    WsjcppLog::err(TAG, "Could not connect to '" + sUnixSocketPath + "'");
     return -1;
 }
 
@@ -39,7 +41,7 @@ if (!dockerApi.doConnectUnixSocketPath(sUnixSocketPath) ) {
 std::vector<WsjcppDockerImage> vImages;
 std::string sError;
 if (!dockerApi.getImages(vImages, sError)) {
-    WSJCppLog::err(TAG, "Could not get list of images '" + sError + "'");
+    WsjcppLog::err(TAG, "Could not get list of images '" + sError + "'");
     return -1;
 }
 

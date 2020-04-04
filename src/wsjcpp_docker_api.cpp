@@ -62,7 +62,7 @@ bool WsjcppDockerImage::fillFromJson(const nlohmann::json &jsonResponse) {
                 }
             }
         } else {
-            WSJCppLog::warn(TAG, "Ignored key images: " + sKey);
+            WsjcppLog::warn(TAG, "Ignored key images: " + sKey);
             std::cout << it.key() << " | " << it.value() << "\n";
         }
         
@@ -196,12 +196,12 @@ bool WsjcppDockerApi::getImages(std::vector<WsjcppDockerImage> &vImages, std::st
         sError = "Something wrong";
         return false;
     }
-    // WSJCppLog::info(TAG, "sResponse = " + sResponse);
+    // WsjcppLog::info(TAG, "sResponse = " + sResponse);
     nlohmann::json jsonResponse = nlohmann::json::parse(sResponse);
     int nSize = jsonResponse.size();
     for (int i = 0; i < nSize; i++) {
         nlohmann::json jsonImage = jsonResponse.at(i);
-        // WSJCppLog::info(TAG, "image = " + jsonImage.dump(4));
+        // WsjcppLog::info(TAG, "image = " + jsonImage.dump(4));
         WsjcppDockerImage image; 
         image.fillFromJson(jsonImage);
         vImages.push_back(image);
@@ -225,7 +225,7 @@ std::string WsjcppDockerApi::makeUrl(const std::string & sPath) {
 // ---------------------------------------------------------------------
 
 bool WsjcppDockerApi::requestGet(const std::string &sURL, std::string &sResponse) {
-    WSJCppLog::info(TAG, "sURL: '" + sURL + "'");
+    WsjcppLog::info(TAG, "sURL: '" + sURL + "'");
     std::string sUserAgent = "wsjcpp-docker-api/?";
     std::string readBuffer;
     CURL *curl;
@@ -245,15 +245,14 @@ bool WsjcppDockerApi::requestGet(const std::string &sURL, std::string &sResponse
         // curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
         res = curl_easy_perform(curl); 
         if (res != CURLE_OK) {
-            WSJCppLog::err(TAG, "Curl failed, reason  " + std::string(curl_easy_strerror(res))); 
-            // TODO remove file
+            WsjcppLog::err(TAG, "Curl failed, reason  " + std::string(curl_easy_strerror(res))); 
             curl_easy_cleanup(curl);
             return false;
         } else {
             long response_code;
             curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &response_code);
             if (response_code != 200) {
-                WSJCppLog::info(TAG, "end " + std::to_string(response_code));
+                WsjcppLog::info(TAG, "end " + std::to_string(response_code));
                 // TODO remove file
                 curl_easy_cleanup(curl);
                 return false;
@@ -264,7 +263,7 @@ bool WsjcppDockerApi::requestGet(const std::string &sURL, std::string &sResponse
         curl_easy_cleanup(curl); 
     }
     sResponse = readBuffer;
-    // WSJCppLog::info(TAG, "Response: " + readBuffer);
+    // WsjcppLog::info(TAG, "Response: " + readBuffer);
     return true;
 }
 

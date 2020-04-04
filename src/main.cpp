@@ -8,23 +8,23 @@ int main(int argc, const char* argv[]) {
     std::string TAG = "MAIN";
     std::string appName = std::string(WSJCPP_NAME);
     std::string appVersion = std::string(WSJCPP_VERSION);
-    if (!WSJCppCore::dirExists(".logs")) {
-        WSJCppCore::makeDir(".logs");
+    if (!WsjcppCore::dirExists(".logs")) {
+        WsjcppCore::makeDir(".logs");
     }
-    WSJCppLog::setPrefixLogFile("wsjcpp");
-    WSJCppLog::setLogDirectory(".logs");
+    WsjcppLog::setPrefixLogFile("wsjcpp");
+    WsjcppLog::setLogDirectory(".logs");
     WsjcppDockerApi dockerApi;
 
     std::string sUnixSocketPath = dockerApi.getDefaultUnixSocketPath();
     if (!dockerApi.doConnectUnixSocketPath(sUnixSocketPath) ) {
-        WSJCppLog::err(TAG, "Could not connect to '" + sUnixSocketPath + "'");
+        WsjcppLog::err(TAG, "Could not connect to '" + sUnixSocketPath + "'");
         return -1;
     }
     // std::string sResponse;
     std::vector<WsjcppDockerImage> vImages;
     std::string sError;
     if (!dockerApi.getImages(vImages, sError)) {
-        WSJCppLog::err(TAG, "Could not get list of images '" + sError + "'");
+        WsjcppLog::err(TAG, "Could not get list of images '" + sError + "'");
         return -1;
     }
 
@@ -42,17 +42,17 @@ int main(int argc, const char* argv[]) {
         std::string sTags = "";
         for (int n = 0; n < vRepoTags.size(); n++) {
             std::string sRepoTag = vRepoTags[n];
-            std::vector<std::string> vRepoTag = WSJCppCore::split(sRepoTag, ":");
+            std::vector<std::string> vRepoTag = WsjcppCore::split(sRepoTag, ":");
             sOutput += "  REPOSITORY: " + vRepoTag[0] + "\n";
             sOutput += "  TAG: " + vRepoTag[1] + "\n";
         }
         sOutput +=
-            "  CREATED: " + std::to_string(img.getCreated()) + ", " + WSJCppCore::formatTimeForWeb(img.getCreated()) + "\n"
+            "  CREATED: " + std::to_string(img.getCreated()) + ", " + WsjcppCore::formatTimeForWeb(img.getCreated()) + "\n"
         ;
 
     }
 
-    WSJCppLog::info(TAG, sOutput);
+    WsjcppLog::info(TAG, sOutput);
     return 0;
 }
 
