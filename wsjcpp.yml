@@ -1,0 +1,38 @@
+name: "wsjcpp-docker-api"
+version: "v0.0.1"
+cmake_minimum_required: "3.0"
+cmake_cxx_standard: "11"
+description: "Docker API wrapper"
+authors:
+  - name: "Evgenii Sopov"
+    email: "mrseakg@gmail.com"
+
+origins:
+  - address: "https://sea-kg.com/wsjcpp-package-registry/"
+    type: "package-registry"
+
+keywords:
+  - "c++"
+
+required-pkg-config:
+  - CURL
+
+dependencies:
+  - name: "wsjcpp-core"
+    version: "v0.0.8"
+    url: "https://github.com/wsjcpp/wsjcpp-core:master"
+    origin: "https://github.com/"
+    installation-dir: "./src.wsjcpp/wsjcpp_core"
+  - name: "nlohmann/json"
+    version: "v3.7.3"
+    url: "https://github.com/wsjcpp/json:develop"
+    origin: "https://github.com/"
+    installation-dir: "./src.wsjcpp/nlohmann_json"
+
+distribution:
+  - source-file: "src/wsjcpp_docker_api.h"
+    target-file: "wsjcpp_docker_api.h"
+    type: "source-code"
+  - source-file: "src/wsjcpp_docker_api.cpp"
+    target-file: "wsjcpp_docker_api.cpp"
+    type: "source-code"
