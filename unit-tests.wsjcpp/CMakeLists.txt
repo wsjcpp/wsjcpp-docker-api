@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.0)
 
 project(unit-tests C CXX)
-add_definitions(-DWSJCPP_APP_VERSION="ut-v0.0.1")
+add_definitions(-DWSJCPP_APP_VERSION="ut-v0.1.0")
 add_definitions(-DWSJCPP_APP_NAME="unit-tests-wsjcpp-docker-api")
 
 if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
@@ -33,7 +33,7 @@ list (APPEND WSJCPP_SOURCES "../src.wsjcpp/wsjcpp_core/wsjcpp_resources_manager.
 list (APPEND WSJCPP_INCLUDE_DIRS "../src.wsjcpp/nlohmann_json/")
 list (APPEND WSJCPP_SOURCES "../src.wsjcpp/nlohmann_json/json.hpp")
 
-# wsjcpp-docker-api:v0.0.1
+# wsjcpp-docker-api:v0.1.0
 list (APPEND WSJCPP_INCLUDE_DIRS "../src")
 list (APPEND WSJCPP_SOURCES "../src/wsjcpp_docker_api.h")
 list (APPEND WSJCPP_SOURCES "../src/wsjcpp_docker_api.cpp")
