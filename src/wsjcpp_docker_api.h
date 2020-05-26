@@ -43,7 +43,6 @@ class WsjcppDockerImage {
         long m_nSize;
         long m_nVirtualSize;
         long m_nContainers;
-
 };
 
 // ---------------------------------------------------------------------

@@ -40,6 +40,8 @@ list (APPEND WSJCPP_SOURCES "../src/wsjcpp_docker_api.cpp")
 
 # unit-tests
 list (APPEND WSJCPP_INCLUDE_DIRS "src")
+list (APPEND WSJCPP_SOURCES "../unit-tests.wsjcpp/src/unit_test_parse_wsjcpp_docker_image.h")
+list (APPEND WSJCPP_SOURCES "../unit-tests.wsjcpp/src/unit_test_parse_wsjcpp_docker_image.cpp")
 
 # required-pkg-config
 ############################

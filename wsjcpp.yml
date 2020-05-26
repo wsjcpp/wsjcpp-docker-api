@@ -36,3 +36,7 @@ distribution:
   - source-file: "src/wsjcpp_docker_api.cpp"
     target-file: "wsjcpp_docker_api.cpp"
     type: "source-code"
+unit-tests:
+  cases:
+    - name: "ParseWsjcppDockerImage"
+      description: "Test parse WsjcppDockerImage"

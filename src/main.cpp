@@ -6,8 +6,8 @@
 
 int main(int argc, const char* argv[]) {
     std::string TAG = "MAIN";
-    std::string appName = std::string(WSJCPP_NAME);
-    std::string appVersion = std::string(WSJCPP_VERSION);
+    std::string appName = std::string(WSJCPP_APP_NAME);
+    std::string appVersion = std::string(WSJCPP_APP_VERSION);
     if (!WsjcppCore::dirExists(".logs")) {
         WsjcppCore::makeDir(".logs");
     }
@@ -34,7 +34,7 @@ int main(int argc, const char* argv[]) {
         sOutput +=
             "\n"
             "  ID: " + img.getId() + "\n"
-            "  SIZE: " + std::to_string(img.getSize()) + "\n";
+            "  SIZE: " + std::to_string(img.getSize()) + " Bytes, " + WsjcppCore::getHumanSizeBytes(img.getSize()) + "\n";
         if (img.getParentId().length() > 0) {
             sOutput += "  PARENT-ID: " + img.getParentId() + "\n";
         }
