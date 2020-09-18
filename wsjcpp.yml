@@ -1,5 +1,5 @@
 name: "wsjcpp-docker-api"
-version: "v0.0.1"
+version: "v0.0.2"
 cmake_minimum_required: "3.0"
 cmake_cxx_standard: "11"
 description: "Docker API wrapper"
@@ -19,13 +19,13 @@ required-pkg-config:
 
 dependencies:
   - name: "wsjcpp-core"
-    version: "v0.1.0"
+    version: "v0.2.0"
     url: "https://github.com/wsjcpp/wsjcpp-core:master"
     origin: "https://github.com/"
     installation-dir: "./src.wsjcpp/wsjcpp_core"
   - name: "nlohmann/json"
-    version: "v3.7.3"
-    url: "https://github.com/wsjcpp/json:develop"
+    version: "v3.9.1"
+    url: "https://github.com/nlohmann/json:develop"
     origin: "https://github.com/"
     installation-dir: "./src.wsjcpp/nlohmann_json"
 
